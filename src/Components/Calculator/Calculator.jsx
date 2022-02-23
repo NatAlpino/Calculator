@@ -7,10 +7,26 @@ import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import "./Calculator.css";
 
-const colorButton = createTheme({
+const pink = createTheme({
   palette: {
     primary: {
       main: '#9c325c',
+    },
+  }
+})
+
+const number = createTheme({
+  palette: {
+    primary: {
+      main: '#4c264b',
+    },
+  }
+})
+
+const purple = createTheme({
+  palette: {
+    primary: {
+      main: '#412973',
     },
   }
 })
@@ -69,65 +85,83 @@ export default function Calculator() {
         <Paper elevation={24}>
           <div className="wrapper">
             <h1 className="display">{num}</h1>
-            <ThemeProvider theme={colorButton}>
-            <button className="pink" onClick={clear}>
+            <ThemeProvider theme={pink}>
+            <Button onClick={clear}>
               AC
-            </button>
-            <button className="pink">Clear</button>
-            <button className="pink" onClick={porcentage}>
+            </Button>
+            <Button>Clear</Button>
+            <Button onClick={porcentage}>
               %
-            </button>
-            <button className="purple" onClick={operatorHandler} value="/">
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={purple}> 
+            <Button onClick={operatorHandler} value="/">
               /
-            </button>
-            <button className="number" onClick={inputNum} value={1}>
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={number}> 
+            <Button onClick={inputNum} value={1}>
               1
-            </button>
-            <button className="number" onClick={inputNum} value={2}>
+            </Button>
+            <Button onClick={inputNum} value={2}>
               2
-            </button>
-            <button className="number" onClick={inputNum} value={3}>
+            </Button>
+            <Button onClick={inputNum} value={3}>
               3
-            </button>
-            <button className="purple" onClick={operatorHandler} value="X">
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={purple}> 
+            <Button onClick={operatorHandler} value="X">
               X
-            </button>
-            <button className="number" onClick={inputNum} value={4}>
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={number}> 
+            <Button onClick={inputNum} value={4}>
               4
-            </button>
-            <button className="number" onClick={inputNum} value={5}>
+            </Button>
+            <Button onClick={inputNum} value={5}>
               5
-            </button>
-            <button className="number" onClick={inputNum} value={6}>
+            </Button>
+            <Button onClick={inputNum} value={6}>
               6
-            </button>
-            <button className="purple" onClick={operatorHandler} value="+">
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={purple}> 
+            <Button onClick={operatorHandler} value="+">
               +
-            </button>
-            <button className="number" onClick={inputNum} value={7}>
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={number}>
+            <Button onClick={inputNum} value={7}>
               7
-            </button>
-            <button className="number" onClick={inputNum} value={8}>
+            </Button>
+            <Button onClick={inputNum} value={8}>
               8
-            </button>
-            <button className="number" onClick={inputNum} value={9}>
+            </Button>
+            <Button onClick={inputNum} value={9}>
               9
-            </button>
-            <button className="purple" onClick={operatorHandler} value="-">
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={purple}>
+            <Button onClick={operatorHandler} value="-">
               -
-            </button>
-            <button className="number" onClick={inputNum} value={"."}>
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={number}>
+            <Button onClick={inputNum} value={"."}>
               .
-            </button>
-            <button className="number" onClick={inputNum} value={0}>
+            </Button>
+            <Button onClick={inputNum} value={0}>
               0
-            </button>
-            <button className="pink" onClick={positNegative}>
+            </Button>
+            </ThemeProvider>
+            <ThemeProvider theme={pink}>
+            <Button onClick={positNegative}>
               +/-
-            </button>
-            <button className="results" onClick={results} value="=">
+            </Button>
+            <Button onClick={results} value="=">
               =
-            </button>
+            </Button>
             </ThemeProvider>
           </div>
         </Paper>
