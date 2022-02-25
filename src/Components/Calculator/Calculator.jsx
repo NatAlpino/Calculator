@@ -1,67 +1,22 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import {
+  porcentage,
+  clear,
+  backspace,
+  positNegative,
+  inputNum,
+  operatorHandler,
+  results,
+} from "../Logic/Logic";
 import "./Calculator.css";
 
-const colorButton = createTheme({
-  palette: {
-    primary: {
-      main: '#9c325c',
-    },
-  }
-})
-
-export default function Calculator() {
+const Calculator = () => {
   const [num, setNum] = useState(0);
   const [oldNum, setOldNum] = useState(0);
   const [operator, setOperator] = useState(0);
-
-  function inputNum(e) {
-    var input = e.target.value;
-    if (num === 0) {
-      setNum(input);
-    } else {
-      setNum(num + input);
-    }
-  }
-
-  function clear() {
-    setNum(0);
-  }
-
-  function porcentage() {
-    setNum(num / 100);
-  }
-
-  function positNegative() {
-    if (num > 0) {
-      setNum(-num);
-    } else {
-      setNum(Math.abs(num)); //math.abs serve para transformar numeros negativos em positivos e vice e versa
-    }
-  }
-  function operatorHandler(e) {
-    var operatorInput = e.target.value;
-    setOperator(operatorInput);
-    setOldNum(num);
-    setNum(0);
-  }
-
-  function results() {
-    if (operator === "/") {
-      setNum(oldNum / num);
-    } else if (operator === "X") {
-      setNum(oldNum * num);
-    } else if (operator === "+") {
-      setNum(parseFloat(oldNum) + parseFloat(num));
-    } else if (operator === "-") {
-      setNum(oldNum - num);
-    }
-  }
 
   return (
     <Box m={5}>
@@ -69,69 +24,155 @@ export default function Calculator() {
         <Paper elevation={24}>
           <div className="wrapper">
             <h1 className="display">{num}</h1>
-            <ThemeProvider theme={colorButton}>
-            <button className="pink" onClick={clear}>
+            <button className="pink" onClick={() => clear(setNum)} value="AC">
               AC
             </button>
-            <button className="pink">Clear</button>
-            <button className="pink" onClick={porcentage}>
+            <button
+              className="pink"
+              onClick={() => backspace(setNum)}
+              value=""
+            >
+              C
+            </button>
+            <button
+              className="pink"
+              onClick={() => porcentage(setNum, num)}
+              value="%"
+            >
               %
             </button>
-            <button className="purple" onClick={operatorHandler} value="/">
+            <button
+              className="purple"
+              onClick={(e) =>
+                operatorHandler(e, setOperator, setOldNum, setNum, num)
+              }
+              value="/"
+            >
               /
             </button>
-            <button className="number" onClick={inputNum} value={1}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="1"
+            >
               1
             </button>
-            <button className="number" onClick={inputNum} value={2}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="2"
+            >
               2
             </button>
-            <button className="number" onClick={inputNum} value={3}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="3"
+            >
               3
             </button>
-            <button className="purple" onClick={operatorHandler} value="X">
+            <button
+              className="purple"
+              onClick={(e) =>
+                operatorHandler(e, setOperator, setOldNum, setNum, num)
+              }
+              value="X"
+            >
               X
             </button>
-            <button className="number" onClick={inputNum} value={4}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="4"
+            >
               4
             </button>
-            <button className="number" onClick={inputNum} value={5}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="5" 
+            >
               5
             </button>
-            <button className="number" onClick={inputNum} value={6}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="6"
+            >
               6
             </button>
-            <button className="purple" onClick={operatorHandler} value="+">
+            <button
+              className="purple"
+              onClick={(e) =>
+                operatorHandler(e, setOperator, setOldNum, setNum, num)
+              }
+              value="+"
+            >
               +
             </button>
-            <button className="number" onClick={inputNum} value={7}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="7"
+            >
               7
             </button>
-            <button className="number" onClick={inputNum} value={8}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="8"
+            >
               8
             </button>
-            <button className="number" onClick={inputNum} value={9}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="9"
+            >
               9
             </button>
-            <button className="purple" onClick={operatorHandler} value="-">
+            <button
+              className="purple"
+              onClick={(e) =>
+                operatorHandler(e, setOperator, setOldNum, setNum, num)
+              }
+              value="-"
+            >
               -
             </button>
-            <button className="number" onClick={inputNum} value={"."}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="."
+            >
               .
             </button>
-            <button className="number" onClick={inputNum} value={0}>
+            <button
+              className="number"
+              onClick={(e) => inputNum(setNum, num, e)}
+              value="0"
+            >
               0
             </button>
-            <button className="pink" onClick={positNegative}>
+            <button
+              className="pink"
+              onClick={() => positNegative(setNum, num)}
+              value="+/-"
+            >
               +/-
             </button>
-            <button className="results" onClick={results} value="=">
+            <button
+              className="results"
+              onClick={() => results(setNum, oldNum, operator, num)}
+              value="="
+            >
               =
             </button>
-            </ThemeProvider>
           </div>
         </Paper>
       </Container>
     </Box>
   );
-}
+};
+
+export default Calculator;
