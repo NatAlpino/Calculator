@@ -1,10 +1,12 @@
-const inputNum = (setNum, num, e) => {
-  var input = e.target.value;
-  if (num === 0) {
+const inputNum = (setNum, num, value) => {
+  // var input = value;
+  const input =  num.toString() + value.toString();
+  // console.log(input)
+  //if (num === 0) {
+   // setNum(input);
+ // } else {
     setNum(input);
-  } else {
-    setNum(num + input);
-  }
+  //}
 };
 
 const clear = (setNum) => {
@@ -23,7 +25,7 @@ const positNegative = (setNum, num) => {
   if (num > 0) {
     setNum(-num);
   } else {
-    setNum(Math.abs(num)); //math.abs serve para transformar numeros negativos em positivos e vice e versa
+    setNum(Math.abs(num));
   }
 };
 const operatorHandler = (e, setOperator, setOldNum, setNum, num) => {

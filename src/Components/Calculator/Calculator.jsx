@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import { StyledButton, StyledGrid, StyledPaper } from "./styledButton";
 import {
   porcentage,
   clear,
@@ -20,157 +20,214 @@ const Calculator = () => {
 
   return (
     <Box m={5}>
-      <Container maxWidth="xs">
-        <Paper elevation={24}>
-          <div className="wrapper">
-            <h1 className="display">{num}</h1>
-            <button className="pink" onClick={() => clear(setNum)} value="AC">
+      <StyledPaper elevation={10}>
+        <div className="wrapper">
+          <h1 className="display">{num}</h1>
+          <StyledGrid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <StyledButton
+              onClick={() => clear(setNum)}
+              value="AC"
+              size="small"
+              color="pink"
+            >
               AC
-            </button>
-            <button
-              className="pink"
+            </StyledButton>
+            <StyledButton
               onClick={() => backspace(setNum)}
-              value=""
+              value="C"
+              size="small"
+              color="pink"
             >
               C
-            </button>
-            <button
-              className="pink"
+            </StyledButton>
+            <StyledButton
               onClick={() => porcentage(setNum, num)}
               value="%"
+              size="small"
+              color="pink"
             >
               %
-            </button>
-            <button
-              className="purple"
+            </StyledButton>
+            <StyledButton
               onClick={(e) =>
                 operatorHandler(e, setOperator, setOldNum, setNum, num)
               }
               value="/"
+              size="small"
+              color="purple"
             >
               /
-            </button>
-            <button
-              className="number"
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="1"
+            </StyledButton>
+          </StyledGrid>
+          <StyledGrid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <StyledButton
+              onClick={() => inputNum(setNum, num, 1)}
+              
+              size="small"
+              color="rose"
             >
               1
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="2"
+              size="small"
+              color="rose"
             >
               2
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="3"
+              size="small"
+              color="rose"
             >
               3
-            </button>
-            <button
-              className="purple"
+            </StyledButton>
+            <StyledButton
               onClick={(e) =>
                 operatorHandler(e, setOperator, setOldNum, setNum, num)
               }
               value="X"
+              size="small"
+              color="purple"
             >
               X
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+          </StyledGrid>
+          <StyledGrid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="4"
+              size="small"
+              color="rose"
             >
               4
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
-              value="5" 
+              value="5"
+              size="small"
+              color="rose"
             >
               5
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="6"
+              size="small"
+              color="rose"
             >
               6
-            </button>
-            <button
-              className="purple"
+            </StyledButton>
+            <StyledButton
               onClick={(e) =>
                 operatorHandler(e, setOperator, setOldNum, setNum, num)
               }
               value="+"
+              size="small"
+              color="purple"
             >
               +
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+          </StyledGrid>
+          <StyledGrid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="7"
+              size="small"
+              color="rose"
             >
               7
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="8"
+              size="small"
+              color="rose"
             >
               8
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="9"
+              size="small"
+              color="rose"
             >
               9
-            </button>
-            <button
-              className="purple"
+            </StyledButton>
+            <StyledButton
               onClick={(e) =>
                 operatorHandler(e, setOperator, setOldNum, setNum, num)
               }
               value="-"
+              size="small"
+              color="purple"
             >
               -
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+          </StyledGrid>
+          <StyledGrid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="."
+              size="small"
+              color="pink"
             >
               .
-            </button>
-            <button
-              className="number"
+            </StyledButton>
+            <StyledButton
               onClick={(e) => inputNum(setNum, num, e)}
               value="0"
+              size="small"
+              color="rose"
             >
               0
-            </button>
-            <button
-              className="pink"
+            </StyledButton>
+            <StyledButton
               onClick={() => positNegative(setNum, num)}
               value="+/-"
+              size="small"
+              color="pink"
             >
               +/-
-            </button>
-            <button
-              className="results"
+            </StyledButton>
+            <StyledButton
               onClick={() => results(setNum, oldNum, operator, num)}
               value="="
+              size="small"
+              color="pink"
             >
               =
-            </button>
-          </div>
-        </Paper>
-      </Container>
+            </StyledButton>
+          </StyledGrid>
+        </div>
+      </StyledPaper>
     </Box>
   );
 };
