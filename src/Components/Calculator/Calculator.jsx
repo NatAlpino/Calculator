@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { StyledButton, StyledGrid, StyledPaper, StyledTextField } from "../StyledComponents/styled";
+import { Grid } from "@material-ui/core";
+import {
+  StyledButton,
+  StyledGrid,
+  StyledPaper,
+  StyledTextField,
+  StyledContainer,
+  StyledBox,
+} from "../StyledComponents/exports";
 import {
   porcentage,
   clear,
@@ -9,7 +17,6 @@ import {
   operatorHandler,
   results,
 } from "../Buttons/logicButton";
-import "./Calculator.css";
 
 const Calculator = () => {
   const [num, setNum] = useState(0);
@@ -17,19 +24,20 @@ const Calculator = () => {
   const [operator, setOperator] = useState(0);
 
   return (
-    <StyledPaper elevation={10}>
-      <div className="background">
+    <Grid container direction="row" justifyContent="center" alignItems="center">
+      <StyledPaper elevation={10}>
         <StyledGrid>
-        <StyledTextField
-        placeholder="0"
-        variant="outlined"
-        disabled={true}
-        value={num}
-        >
-        </StyledTextField>
+          <StyledTextField
+            placeholder="0"
+            variant="outlined"
+            disabled={true}
+            value={num}
+          ></StyledTextField>
         </StyledGrid>
+
         <StyledGrid
-          container maxWidth="xs"
+          container
+          maxWidth="xs"
           display="flex"
           justifyContent="center"
           alignItems="center"
@@ -216,8 +224,8 @@ const Calculator = () => {
             =
           </StyledButton>
         </StyledGrid>
-      </div>
-    </StyledPaper>
+      </StyledPaper>
+    </Grid>
   );
 };
 
