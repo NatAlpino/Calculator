@@ -1,13 +1,11 @@
 const inputNum = (setNum, num, value) => {
-  // var input = value;
-  const input =  num.toString() + value.toString();
-  // console.log(input)
-  //if (num === 0) {
-   // setNum(input);
- // } else {
-    setNum(input);
-  //}
-};
+  var input = value //valor digitado
+  if(num === 0) { //se estiver com valor 0
+    setNum(input); //entao o setNum substitui o zero e recebe o input
+  }else {
+    setNum(num + input); //se o input nao for 0 ai ele mantem e vai acrescentando o input novo
+  }
+  
 
 const clear = (setNum) => {
   setNum(0);
@@ -28,8 +26,8 @@ const positNegative = (setNum, num) => {
     setNum(Math.abs(num));
   }
 };
-const operatorHandler = (e, setOperator, setOldNum, setNum, num) => {
-  var operatorInput = e.target.value;
+const operatorHandler = (value, setOperator, setOldNum, setNum, num) => {
+  var operatorInput = value;
   setOperator(operatorInput);
   setOldNum(num);
   setNum(0);

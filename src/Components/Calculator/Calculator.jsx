@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import { StyledButton, StyledGrid, StyledPaper } from "./styledButton";
 import {
   porcentage,
@@ -54,10 +53,10 @@ const Calculator = () => {
               %
             </StyledButton>
             <StyledButton
-              onClick={(e) =>
-                operatorHandler(e, setOperator, setOldNum, setNum, num)
+              onClick={() =>
+                operatorHandler("/", setOperator, setOldNum, setNum, num)
               }
-              value="/"
+          
               size="small"
               color="purple"
             >
@@ -79,26 +78,26 @@ const Calculator = () => {
               1
             </StyledButton>
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="2"
+              onClick={() => inputNum(setNum, num, 2)}
+             
               size="small"
               color="rose"
             >
               2
             </StyledButton>
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="3"
+              onClick={() => inputNum(setNum, num, 3)}
+              
               size="small"
               color="rose"
             >
               3
             </StyledButton>
             <StyledButton
-              onClick={(e) =>
-                operatorHandler(e, setOperator, setOldNum, setNum, num)
+              onClick={() =>
+                operatorHandler("X", setOperator, setOldNum, setNum, num)
               }
-              value="X"
+             
               size="small"
               color="purple"
             >
@@ -112,34 +111,34 @@ const Calculator = () => {
             alignItems="center"
           >
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="4"
+              onClick={() => inputNum(setNum, num, 4)}
+          
               size="small"
               color="rose"
             >
               4
             </StyledButton>
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="5"
+              onClick={() => inputNum(setNum, num, 5)}
+            
               size="small"
               color="rose"
             >
               5
             </StyledButton>
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="6"
+              onClick={() => inputNum(setNum, num, 6)}
+           
               size="small"
               color="rose"
             >
               6
             </StyledButton>
             <StyledButton
-              onClick={(e) =>
-                operatorHandler(e, setOperator, setOldNum, setNum, num)
+              onClick={() =>
+                operatorHandler("+", setOperator, setOldNum, setNum, num)
               }
-              value="+"
+           
               size="small"
               color="purple"
             >
@@ -153,34 +152,34 @@ const Calculator = () => {
             alignItems="center"
           >
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="7"
+              onClick={() => inputNum(setNum, num, 7)}
+            
               size="small"
               color="rose"
             >
               7
             </StyledButton>
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="8"
+              onClick={() => inputNum(setNum, num, 8)}
+            
               size="small"
               color="rose"
             >
               8
             </StyledButton>
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="9"
+              onClick={() => inputNum(setNum, num, 9)}
+             
               size="small"
               color="rose"
             >
               9
             </StyledButton>
             <StyledButton
-              onClick={(e) =>
-                operatorHandler(e, setOperator, setOldNum, setNum, num)
+              onClick={() =>
+                operatorHandler("-", setOperator, setOldNum, setNum, num)
               }
-              value="-"
+            
               size="small"
               color="purple"
             >
@@ -194,16 +193,16 @@ const Calculator = () => {
             alignItems="center"
           >
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="."
+              onClick={() => inputNum(setNum, num, ".")}
+              
               size="small"
               color="pink"
             >
               .
             </StyledButton>
             <StyledButton
-              onClick={(e) => inputNum(setNum, num, e)}
-              value="0"
+              onClick={() => inputNum(setNum, num, 0)}
+          
               size="small"
               color="rose"
             >
