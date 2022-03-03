@@ -1,9 +1,24 @@
 import styled from "styled-components";
-import { IconButton, Grid, Paper } from "@material-ui/core";
+import { IconButton, Grid, Paper, TextField } from "@material-ui/core";
+
+const StyledTextField = styled(TextField)`
+  input {
+    width: 80%;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: #c4a7fa;
+    border-radius: 0.5em;
+  }
+  opacity: 0.3;
+`;
 
 const StyledButton = styled(IconButton)`
   && {
-    box-shadow: 1px 1px, 0px 1px 1px 0px;
     margin-right: 8px;
     height: 44px;
     width: 44px;
@@ -27,14 +42,11 @@ const StyledGrid = styled(Grid)`
 `;
 
 const StyledPaper = styled(Paper)`
+  margin-left: 40%;
+  margin-top: 2%;
+  align-items: center;
   width: 30%;
-  height: 40%;
+  border-radius: 2em;
 `;
 
-const background = `
-  background-color: #0e0036;
-  border-radius: 1em;
-  padding: 1em;
-`;
-
-export { StyledButton, StyledGrid, StyledPaper, background };
+export { StyledButton, StyledGrid, StyledPaper, StyledTextField };

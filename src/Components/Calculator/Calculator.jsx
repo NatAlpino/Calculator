@@ -19,7 +19,14 @@ const Calculator = () => {
   return (
     <StyledPaper elevation={10}>
       <div className="background">
-        <h1 className="display">{num}</h1>
+        <StyledGrid>
+        <StyledTextField
+        placeholder="0"
+        variant="outlined"
+        value={num}
+        >
+        </StyledTextField>
+        </StyledGrid>
         <StyledGrid
           container maxWidth="xs"
           display="flex"
