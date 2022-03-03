@@ -3,8 +3,7 @@ import { IconButton, Grid, Paper } from "@material-ui/core";
 
 const StyledButton = styled(IconButton)`
   && {
-    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
-      0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    box-shadow: 1px 1px, 0px 1px 1px 0px;
     margin-right: 8px;
     height: 44px;
     width: 44px;
@@ -19,9 +18,6 @@ const StyledButton = styled(IconButton)`
       if (color === "purple") {
         return "#412973";
       }
-      if (color === "wrapper") {
-        return "#0e0036";
-      }
     }};
   }
 `;
@@ -35,4 +31,10 @@ const StyledPaper = styled(Paper)`
   height: 40%;
 `;
 
-export { StyledButton, StyledGrid, StyledPaper };
+const background = `
+  background-color: #0e0036;
+  border-radius: 1em;
+  padding: 1em;
+`;
+
+export { StyledButton, StyledGrid, StyledPaper, background };

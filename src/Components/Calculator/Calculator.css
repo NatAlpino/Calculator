@@ -1,19 +1,9 @@
-button:hover{
-    cursor: pointer;
-}
-
 .background {
     background-color: #0e0036;
     border-radius: 1em;
     padding: 1em;
 }
 
-.display {
-    height: 1em;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 1em;
-    font-size: 3em;
-}
+
 
 
