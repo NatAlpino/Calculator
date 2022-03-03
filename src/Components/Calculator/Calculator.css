@@ -2,7 +2,7 @@ button:hover{
     cursor: pointer;
 }
 
-.wrapper {
+.background {
     background-color: #0e0036;
     border-radius: 1em;
     padding: 1em;

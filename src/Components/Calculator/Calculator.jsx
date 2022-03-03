@@ -18,7 +18,7 @@ const Calculator = () => {
 
   return (
       <StyledPaper elevation={10}>
-        <div className="wrapper">
+        <div className="background">
           <h1 className="display">{num}</h1>
           <StyledGrid
             container
