@@ -3,16 +3,18 @@ import { IconButton, Grid, Paper, TextField } from "@material-ui/core";
 
 const StyledTextField = styled(TextField)`
   input {
-    width: 80%;
-    height: 20px;
+    width: 100%;
+    height: 100%;
     margin-right: 10px;
     margin-top: 10px;
     margin-left: 10px;
+    margin-bottom: 10px;
     text-align: right;
     font-weight: bold;
     font-size: 24px;
     background-color: #c4a7fa;
     border-radius: 0.5em;
+    border: none;
   }
   opacity: 0.3;
 `;
@@ -42,6 +44,7 @@ const StyledGrid = styled(Grid)`
 `;
 
 const StyledPaper = styled(Paper)`
+  display: inline-block;
   margin-left: 40%;
   margin-top: 2%;
   align-items: center;

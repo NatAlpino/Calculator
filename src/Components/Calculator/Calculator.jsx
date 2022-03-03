@@ -23,6 +23,7 @@ const Calculator = () => {
         <StyledTextField
         placeholder="0"
         variant="outlined"
+        disabled={true}
         value={num}
         >
         </StyledTextField>
