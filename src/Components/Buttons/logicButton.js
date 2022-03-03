@@ -1,11 +1,10 @@
 const inputNum = (setNum, num, value) => {
-  var input = value //valor digitado
-  if(num === 0) { //se estiver com valor 0
-    setNum(input); //entao o setNum substitui o zero e recebe o input
-  }else {
-    setNum(num + input); //se o input nao for 0 ai ele mantem e vai acrescentando o input novo
-  }
-  
+    if (num === 0) {
+      setNum(String(value));
+    } else {
+      setNum(String(num) + String(value))
+    }
+};
 
 const clear = (setNum) => {
   setNum(0);
@@ -13,7 +12,7 @@ const clear = (setNum) => {
 
 const backspace = (setNum) => {
   setNum(0, -1);
-}
+};
 
 const porcentage = (setNum, num) => {
   setNum(num / 100);
@@ -45,4 +44,12 @@ const results = (setNum, oldNum, operator, num) => {
   }
 };
 
-export { porcentage, clear, backspace, positNegative, inputNum, operatorHandler, results };
+export {
+  porcentage,
+  clear,
+  backspace,
+  positNegative,
+  inputNum,
+  operatorHandler,
+  results,
+};
