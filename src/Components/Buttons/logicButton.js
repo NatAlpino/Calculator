@@ -1,9 +1,9 @@
 const inputNum = (setNum, num, value) => {
-    if (num === 0) {
-      setNum(String(value));
-    } else {
-      setNum(String(num) + String(value))
-    }
+  if (num === 0) {
+    setNum(String(value));
+  } else {
+    setNum(String(num) + String(value));
+  }
 };
 
 const clear = (setNum) => {

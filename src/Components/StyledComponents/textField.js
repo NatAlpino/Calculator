@@ -1,5 +1,5 @@
 import Styled from "styled-components";
-import { TextField } from "@material-ui/core"
+import { TextField } from "@material-ui/core";
 
 const StyledTextField = Styled(TextField)`
 && .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
