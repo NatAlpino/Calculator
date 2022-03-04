@@ -11,7 +11,6 @@ const StyledTextField = Styled(TextField)`
     margin-left: 5%;
     margin-right: 5%;
     text-align: right;
-    font-weight: bold;
     font-size: 18px;
     font-color: #fff
     opacity: 0.5;
@@ -22,6 +21,8 @@ const StyledTextField = Styled(TextField)`
   font-size: 18px;
   margin-top: 5%;
   margin-right: 5%;
+  font-weight: bold;
+  color: rgb(7, 9, 109);
 }
 `;
 export default StyledTextField;
