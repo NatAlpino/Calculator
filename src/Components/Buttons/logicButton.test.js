@@ -1,3 +1,4 @@
+import { StrikethroughSRounded } from "@material-ui/icons";
 import {
   porcentage,
   clear,
@@ -9,20 +10,22 @@ import {
 } from "./logicButton";
 
 const number = 10;
-const setNum = () => {
-  value
-}
+let value;
+const setNum = (x) => {
+  value = x;
+};
 
 describe("Porcentage", () => {
   test("extrai a porcentagem do numero indicado na tela de input", () => {
-    setNum = number / 100
-    value = 0.01;
+    porcentage(setNum, number);
+    expect(value).toEqual(0.1);
   });
 });
 
 describe("Clear", () => {
   test("deve limpar a tela de input sempre que o botao clear for acionado", () => {
-    expect(clear);
+    clear(setNum)
+    expect(value).toEqual(0);
   });
 });
 
@@ -33,14 +36,24 @@ describe("Backspace", () => {
 });
 
 describe("PositNegative", () => {
-  test("transforma um numero positivo em negativo e vice versa", () => {
-    expect(positNegative);
+  test("transforma um numero positivo em negativo", () => {
+    positNegative(setNum, number)
+    expect(value).toEqual(-10);
+  });
+  test("transforma um numero negativo em positivo", () => {
+    positNegative(setNum, -10)
+    expect(value).toEqual(number);
   });
 });
 
 describe("InputNum", () => {
   test("carrega na tela de input o numero selecionado", () => {
-    expect(inputNum);
+    inputNum(setNum, 0, number);
+    expect(value).toEqual(String(number));
+  });
+  test("concatena os numeros", () => {
+    inputNum(setNum, 0, number);
+    expect(value).toEqual(String(value) + String(number));
   });
 });
 
@@ -64,4 +77,3 @@ describe("Results", () => {
     expect(results);
   });
 });
-
