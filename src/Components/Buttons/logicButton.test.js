@@ -8,9 +8,15 @@ import {
   results,
 } from "./logicButton";
 
+const number = 10;
+const setNum = () => {
+  value
+}
+
 describe("Porcentage", () => {
   test("extrai a porcentagem do numero indicado na tela de input", () => {
-    expect(porcentage);
+    setNum = number / 100
+    value = 0.01;
   });
 });
 
