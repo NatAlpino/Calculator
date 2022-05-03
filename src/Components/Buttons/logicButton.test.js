@@ -1,4 +1,3 @@
-import { StrikethroughSRounded } from "@material-ui/icons";
 import {
   porcentage,
   clear,
@@ -31,7 +30,8 @@ describe("Clear", () => {
 
 describe("Backspace", () => {
   test("deve zerar qualquer operacao para que uma nova seja iniciada", () => {
-    expect(backspace);
+    backspace(setNum)
+    expect(value).toEqual(0);
   });
 });
 
@@ -53,27 +53,44 @@ describe("InputNum", () => {
   });
   test("concatena os numeros", () => {
     inputNum(setNum, 0, number);
-    expect(value).toEqual(String(value) + String(number));
+    expect(value).toEqual(value, String(number));
   });
 });
 
-describe("OperatorHandler", () => {
-  test("faz a divisao dos numeros selecionados", () => {
-    expect(operatorHandler);
-  });
-  test("faz a multiplicacao dos numeros selecionados", () => {
-    expect(operatorHandler);
-  });
-  test("faz a soma dos numeros selecionados", () => {
-    expect(operatorHandler);
-  });
-  test("faz a subtracao dos numeros selecionados", () => {
-    expect(operatorHandler);
-  });
-});
+// describe("OperatorHandler", () => {
+//   test("faz a divisao dos numeros selecionados", () => {
+//     operatorHandler()
+//     expect(value).toEqual();
+//   });
+//   test("faz a multiplicacao dos numeros selecionados", () => {
+//     operatorHandler()
+//     expect(value).toEqual();
+//   });
+//   test("faz a soma dos numeros selecionados", () => {
+//     operatorHandler()
+//     expect(value).toEqual();
+//   });
+//   test("faz a subtracao dos numeros selecionados", () => {
+//     operatorHandler()
+//     expect(value).toEqual();
+//   });
+// });
 
 describe("Results", () => {
-  test("apresenta na tela de input, o resultado da operacao anterior", () => {
-    expect(results);
+  test("faz a divisao dos numeros selecionados", () => {
+    results(10 / number)
+    expect(value).toEqual(1);
+  });
+  test("faz a multiplicacao dos numeros selecionados", () => {
+    results(10 * number)
+    expect(value).toEqual(100);
+  });
+  test("faz a soma dos numeros selecionados", () => {
+    results(10 + number)
+    expect(value).toEqual(20);
+  });
+  test("faz a subtracao dos numeros selecionados", () => {
+    results(10 - number)
+    expect(value).toEqual(0);
   });
 });
