@@ -25,9 +25,9 @@ const positNegative = (setNum, num) => {
     setNum(Math.abs(num));
   }
 };
+
 const operatorHandler = (value, setOperator, setOldNum, setNum, num) => {
-  var operatorInput = value;
-  setOperator(operatorInput);
+  setOperator(value);
   setOldNum(num);
   setNum(0);
 };

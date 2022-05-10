@@ -4,7 +4,7 @@ import {
   backspace,
   positNegative,
   inputNum,
-  operatorHandler,
+  // operatorHandler,
   results,
 } from "./logicButton";
 
@@ -57,40 +57,21 @@ describe("InputNum", () => {
   });
 });
 
-// describe("OperatorHandler", () => {
-//   test("faz a divisao dos numeros selecionados", () => {
-//     operatorHandler()
-//     expect(value).toEqual();
-//   });
-//   test("faz a multiplicacao dos numeros selecionados", () => {
-//     operatorHandler()
-//     expect(value).toEqual();
-//   });
-//   test("faz a soma dos numeros selecionados", () => {
-//     operatorHandler()
-//     expect(value).toEqual();
-//   });
-//   test("faz a subtracao dos numeros selecionados", () => {
-//     operatorHandler()
-//     expect(value).toEqual();
-//   });
-// });
-
 describe("Results", () => {
   test("faz a divisao dos numeros selecionados", () => {
-    results(10 / number)
+    results(setNum, number, "/", 10)
     expect(value).toEqual(1);
   });
   test("faz a multiplicacao dos numeros selecionados", () => {
-    results(10 * number)
+    results(setNum, number, "X", 10)
     expect(value).toEqual(100);
   });
   test("faz a soma dos numeros selecionados", () => {
-    results(10 + number)
+    results(setNum, number, "+", 10)
     expect(value).toEqual(20);
   });
   test("faz a subtracao dos numeros selecionados", () => {
-    results(10 - number)
+    results(setNum, number, "-", 10)
     expect(value).toEqual(0);
   });
 });
