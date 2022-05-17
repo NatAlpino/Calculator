@@ -1,6 +1,6 @@
-import StyledButton from "./button";
-import StyledTextField from "./textField";
-import StyledGrid from "./grid";
-import StyledPaper from "./paper";
+import StyledButton from "./Button/button";
+import StyledTextField from "./TextField/textField";
+import StyledGrid from "./Grid/grid";
+import StyledPaper from "./Paper/paper";
 
 export { StyledButton, StyledTextField, StyledGrid, StyledPaper };

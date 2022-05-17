@@ -21,8 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test-coverage": "react-scripts test --coverage",
+    "test": "react-scripts test --silent --maxWorkers=2 --logHeapUsage" ,
+    "test-coverage": "react-scripts test --coverage --silent --maxWorkers=2 --logHeapUsage --no-cache",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
