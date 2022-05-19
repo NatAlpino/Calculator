@@ -9,7 +9,7 @@ const num = (x) => {
 
 describe("StyledTextField", () => {
   it("Testando TextField", () => {
-    const button = mount(
+    const textField = mount(
       <StyledTextField
         placeholder="0"
         variant="outlined"
@@ -17,9 +17,10 @@ describe("StyledTextField", () => {
         value={num}
       ></StyledTextField>
     );
+    //simular o input, parecido com o simulate do click button.
     expect(value).toEqual(0);
-    expect(button.prop("placeholder")).toEqual("0");
-    expect(button.prop("variant")).toEqual("outlined");
-    expect(button.prop("disabled")).toEqual("true");
+    expect(textField.prop("placeholder")).toEqual("0");
+    expect(textField.prop("variant")).toEqual("outlined");
+    expect(textField.prop("disabled")).toEqual("true");
   });
 });

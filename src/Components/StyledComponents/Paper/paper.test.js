@@ -4,12 +4,12 @@ import StyledPaper from "./paper";
 
 describe("StyledPaper", () => {
   it("Testando Paper", () => {
-    const button = mount(
+    const paper = mount(
       <StyledPaper
       elevation={"10"}
       >
       </StyledPaper>
     );
-    expect(button.prop("elevation")).toEqual("10");
+    expect(paper.prop("elevation")).toEqual("10");
   });
 });
