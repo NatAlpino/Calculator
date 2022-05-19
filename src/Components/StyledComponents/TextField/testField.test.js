@@ -17,7 +17,7 @@ describe("StyledTextField", () => {
         value={num}
       ></StyledTextField>
     );
-    //simular o input, parecido com o simulate do click button.
+    textField.simulate("input");
     expect(value).toEqual(0);
     expect(textField.prop("placeholder")).toEqual("0");
     expect(textField.prop("variant")).toEqual("outlined");

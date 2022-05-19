@@ -15,22 +15,22 @@ const setNum = (x) => {
   value = x;
 };
 
+let operator;
 let setOperator = (x) => {
-  setOldNum = x;
+  operator = x;
 };
 
-let num;
+let oldNum;
 let setOldNum = (x) => {
-  num = x;
+  oldNum = x;
 };
 
 describe("OperatorHandler", () => {
   test("Testando os operadores", () => {
     operatorHandler(number, setOperator, setOldNum, setNum, 10);
-    expect(setOperator).toEqual(0);
-    expect(setOldNum).toEqual(10);
-    expect(setNum).toEqual(num);
-    expect(value).toEqual(number);
+    expect(operator).toEqual(number);
+    expect(oldNum).toEqual(10);
+    expect(value).toEqual(0);
   });
 });
 
